@@ -1,21 +1,21 @@
 using System;
 
-namespace source {
+namespace Source {
   class Program {
-    public static void Main(string[] args) {
+    private static void Main(string[] args) {
       FizzBuzz fizzBuzz = new FizzBuzz();
-      for(ushort i=1;i<=30;i++) {
-        Console.WriteLine(fizzBuzz.Exec(i));
+      for(ushort i = 1; i <= 30; i++) {
+        Console.WriteLine(fizzBuzz.Call(callCount: i));
       }
     }
   }
 
   class FizzBuzz {
-    public string Exec(ushort num) {
-        if (num % 15 == 0) return "FizzBuzz";
-        if (num % 3 == 0) return "Fizz";
-        if (num % 5 == 0) return "Buzz";
-        return num.ToString();
+    public string Call(ushort callCount) {
+      return (callCount % 15 == 0) ? "FizzBuzz" :
+        (callCount % 3 == 0) ? "Fizz" :
+        (callCount % 5 == 0) ? "Buzz" :
+        callCount.ToString();
     }
   }
 }
